@@ -1,0 +1,7 @@
+Some resources:
+
+https://docs.docker.com/guides/cpp/multistage/
+https://hub.docker.com/_/gcc
+https://github.com/dockersamples/c-plus-plus-docker
+https://www.chessprogramming.org/Main_Page
+https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#colors
