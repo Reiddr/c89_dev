@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <ansi_codes.h>
 
 int main(){
-	printf("Welcome to command line chess\n");
+	printf(RED "Sup big dog\n" RESET);
 	return 0;
 }
