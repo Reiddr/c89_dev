@@ -1,7 +1,13 @@
 #include <stdio.h>
-#include <ansi_codes.h>
+#include <stdint.h>
+#include <print_board.h>
+#include <bitboard.h>
 
 int main(){
-	printf(RED "Sup big dog\n" RESET);
+	struct bitboard pawns_b = {
+		'P', 
+		0x000000000000FF00
+	};
+	bitboard_print(pawns_b); 
 	return 0;
 }
