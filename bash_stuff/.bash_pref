@@ -1,0 +1,17 @@
+parse_git_status() {
+    branch=$(git branch --show-current 2>/dev/null)
+    status=$(git status --porcelain 2>/dev/null | wc -l)
+    if [ -n "$branch" ]; then
+        echo "$branch$( [ $status -gt 0 ] && echo '*' )"
+    fi
+}
+
+export PS1="\u@\h 
+
+\[\e[32m\]
+
+\$(parse_git_status)
+
+\[\e[0m\]
+
+ \$ "

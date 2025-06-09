@@ -1,10 +1,12 @@
-FROM ubuntu:latest AS build
+FROM gcc:latest
 
-RUN apt-get update && apt-get install -y build-essential
-WORKDIR /app
-COPY app/src/main.c . 
-RUN gcc -o cmd_chess main.c -static
-
-FROM scratch
-COPY --from=build /app/cmd_chess /cmd_chess
-CMD ["/cmd_chess"]
+RUN apt-get update && apt-get install -y \
+	make neovim
+RUN useradd -m -s /bin/bash pawn
+RUN echo 'export HISTFILE=~/.bash_history' >> /home/pawn/.bashrc && \
+	echo 'source ~/.bash_pref' >> /home/pawn/.bashrc
+USER pawn
+RUN touch ~/.bash_hist && \
+	touch ~/.bash_pref
+WORKDIR /home/pawn
+CMD ["sleep", "infinity"]
