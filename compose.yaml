@@ -1,0 +1,5 @@
+services:
+  cmd_chess:
+    build: .
+    volumes:
+      - ./app:/app
