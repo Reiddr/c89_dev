@@ -1,17 +1,22 @@
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=-1
+HISTFILESIZE=-1
+export HISTFILE=~/.bash_history
+
+alias vim='nvim'
+alias ll='ls -lAsh'
+alias vb='nvim ~/.bash_pref'
+alias r='source ~/.bashrc'
+
 parse_git_status() {
     branch=$(git branch --show-current 2>/dev/null)
     status=$(git status --porcelain 2>/dev/null | wc -l)
     if [ -n "$branch" ]; then
-        echo "$branch$( [ $status -gt 0 ] && echo '*' )"
+        echo "$( [ $status -gt 0 ] && echo '*' )$branch"
     fi
 }
 
-export PS1="\u@\h 
-
-\[\e[32m\]
-
-\$(parse_git_status)
-
-\[\e[0m\]
-
- \$ "
+# export PS1="\$(parse_git_status)\$ "
+# export PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+# export PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+export PS1='\[\033[01;32m\]\w \[\033[01;34m\]$(parse_git_status) $([[ $? -eq 0 ]] && echo "\033[01;32m\] >" || echo "\[\033[0;31m\] >")\[\033[00m\]\]'
