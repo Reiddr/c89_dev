@@ -3,7 +3,7 @@ HISTSIZE=-1
 HISTFILESIZE=-1
 export HISTFILE=~/.bash_history
 
-alias vim='nvim'
+alias v='nvim'
 alias ll='ls -lAsh'
 alias vb='nvim ~/.bash_pref'
 alias r='source ~/.bashrc'

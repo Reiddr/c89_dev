@@ -2,11 +2,17 @@
 version: '3.8'
 services:
   c89_dev:
-    build: . 
+    build:  
+      context: .
+      ssh: ["default"]
     container_name: cmd_chess
+    environment:
+      SSH_AUTH_SOCK: ${SSH_AUTH_SOCK}
     volumes:
       - .:/home/pawn/app
       - ./bash_stuff/.bash_history:/home/pawn/.bash_history
       - ./bash_stuff/.bash_pref:/home/pawn/.bash_pref
+    ipc: "host"
+    network_mode: "host"
     stdin_open: true
     tty: true

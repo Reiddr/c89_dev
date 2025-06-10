@@ -1,7 +1,7 @@
 FROM gcc:latest
 
 RUN apt-get update && apt-get install -y \
-	make neovim
+	make neovim sudo
 RUN useradd -m -s /bin/bash pawn
 RUN echo 'export HISTFILE=~/.bash_history' >> /home/pawn/.bashrc && \
 	echo 'source ~/.bash_pref' >> /home/pawn/.bashrc

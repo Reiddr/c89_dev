@@ -10,7 +10,5 @@ int main(){
 	};
 	bitboard_print(pawns_b); 
 
-int main(){
-	printf("Welcome to command line chess\n");
 	return 0;
 }
