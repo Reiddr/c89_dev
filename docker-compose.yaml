@@ -7,12 +7,12 @@ services:
       ssh: ["default"]
     container_name: cmd_chess
     environment:
-      SSH_AUTH_SOCK: ${SSH_AUTH_SOCK}
+      - SSH_AUTH_SOCK=/ssh-agent
     volumes:
+      - ~/.gitconfig:/home/pawn/.gitconfig
+      - $SSH_AUTH_SOCK:/ssh-agent
       - .:/home/pawn/app
       - ./bash_stuff/.bash_history:/home/pawn/.bash_history
       - ./bash_stuff/.bash_pref:/home/pawn/.bash_pref
-    ipc: "host"
-    network_mode: "host"
     stdin_open: true
     tty: true
