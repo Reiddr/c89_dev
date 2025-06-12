@@ -15,13 +15,12 @@ int byte_print(uint8_t byte, char space, char* colour){
 	printf("\n" RESET);
 }
 
-int bitboard_print(struct bitboard pb){
+int bitboard_print(uint64_t bb){
 	uint8_t rank;
 	int i;
-	printf("Piece: %c\n", pb.type);
 	for(i = 0; i<8; i++){
-		rank = pb.loc >> (i*8);
-		byte_print(rank, '|', RED);
+		rank = bb >> (i*8);
+		byte_print(rank, '|', YELLOW);
 	}
 }
 #endif /*PRINT_BOARD_H*/

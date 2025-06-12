@@ -4,15 +4,13 @@
 #include <bitboard.h>
 
 int main(){
-	struct bitboard pawns_b = {
-		'P', 
-		0x000000000000FF00
-	};
-	struct bitboard pawns_w = {
-		'P', 
-		0x00FF000000000000
-	};
-	bitboard_print(pawns_b); 
+	uint64_t white_pieces[BB_T_COUNT]; 
+	bb_populate_pieces(white_pieces);
+	uint8_t i;
+	for(i=BB_T_PAWN; i<BB_T_COUNT; i++){
+		printf("%c\n", bb_get_piece_char(i));
+		bitboard_print(white_pieces[i]); 
+	}
 
 	return 0;
 }
