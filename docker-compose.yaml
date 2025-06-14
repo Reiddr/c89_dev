@@ -6,6 +6,7 @@ services:
       context: .
       ssh: ["default"]
     container_name: c89_dev 
+    entrypoint: [/home/pawn/.entrypoint.sh]
     environment:
       - SSH_AUTH_SOCK=/ssh-agent
     volumes:
@@ -15,5 +16,6 @@ services:
       - ./bash_stuff/bash_history:/home/pawn/.bash_history
       - ./bash_stuff/bash_pref:/home/pawn/.bash_pref
       - ./bash_stuff/entrypoint.sh:/home/pawn/.entrypoint.sh
+      - ./src/nvim_config:/home/pawn/.config/nvim
     stdin_open: true
     tty: true

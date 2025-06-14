@@ -10,4 +10,3 @@ RUN touch ~/.bash_hist && \
 	touch ~/.bash_pref && \
 	touch ~/.entrypoint.sh
 WORKDIR /home/pawn
-CMD ["sleep", "infinity"]

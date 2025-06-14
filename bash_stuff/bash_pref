@@ -4,9 +4,9 @@ HISTFILESIZE=-1
 export HISTFILE=~/.bash_history
 
 alias v='nvim'
-alias ll='ls -lAsh'
+alias lh='ls -lAsh'
 alias vb='nvim ~/.bash_pref'
-alias vv='nvim ~/.config/nvim.init.lua'
+alias vv='nvim ~/.config/nvim/init.lua'
 alias r='source ~/.bashrc'
 
 alias gs='git status'
