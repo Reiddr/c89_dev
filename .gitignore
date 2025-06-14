@@ -53,3 +53,4 @@ dkms.conf
 
 #custom
 bash_stuff/.bash_history
+*tags
