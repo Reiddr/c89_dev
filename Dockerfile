@@ -7,6 +7,7 @@ RUN echo 'export HISTFILE=~/.bash_history' >> /home/pawn/.bashrc && \
 	echo 'source ~/.bash_pref' >> /home/pawn/.bashrc
 USER pawn
 RUN touch ~/.bash_hist && \
-	touch ~/.bash_pref
+	touch ~/.bash_pref && \
+	touch ~/.entrypoint.sh
 WORKDIR /home/pawn
 CMD ["sleep", "infinity"]

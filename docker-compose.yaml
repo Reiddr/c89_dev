@@ -11,8 +11,9 @@ services:
     volumes:
       - ~/.gitconfig:/home/pawn/.gitconfig
       - $SSH_AUTH_SOCK:/ssh-agent
-      - .:/home/pawn/app
-      - ./bash_stuff/.bash_history:/home/pawn/.bash_history
-      - ./bash_stuff/.bash_pref:/home/pawn/.bash_pref
+      - ./src:/home/pawn/app
+      - ./bash_stuff/bash_history:/home/pawn/.bash_history
+      - ./bash_stuff/bash_pref:/home/pawn/.bash_pref
+      - ./bash_stuff/entrypoint.sh:/home/pawn/.entrypoint.sh
     stdin_open: true
     tty: true
