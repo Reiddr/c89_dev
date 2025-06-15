@@ -4,7 +4,7 @@ HISTFILESIZE=-1
 export HISTFILE=~/.bash_history
 
 alias v='nvim'
-alias lh='ls -lAsh'
+alias lh='ls -lAh'
 alias vb='nvim ~/.bash_pref'
 alias vv='nvim ~/.config/nvim/init.lua'
 alias r='source ~/.bashrc'
